@@ -25,16 +25,16 @@ class MainActivity : AppCompatActivity() {
         )
 
         rv.apply {
-            addItemDecoration(Spacer(10))
+            addItemDecoration(Spacer(10)) // space bt items
             adapter = MyAdapter(imgList)
-            setCanTouch(false)
+            setCanTouch(true) // false to disable user touch
             val gridLayoutManager = GridLayoutManager(
                 this@MainActivity,
                 3, RecyclerView.HORIZONTAL, false
             )
             layoutManager = gridLayoutManager
-            isLoopEnabled = true
-            openAutoScroll(5,false)
+            isLoopEnabled = true // enable infinite scroll
+            openAutoScroll(5,true) // first param to control speed, second wether to scroll backward
         }
     }
 }
